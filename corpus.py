@@ -1,4 +1,5 @@
 rdany_answers = {
+    "greetings.START": ["Hola!!"],
     "greetings.HI": {"first_time": "¡Hola! ¿Cómo estás?", "recently": "Hola nuevamente.", "else": "¡Hola! ¡Tanto tiempo!"},
     "greetings.IM_FINE": {"first_time": "¡Muy bien!", "recently": "Todo sigue bien por aquí.", "else": "¡Excelente!"},
     "greetings.NICE": {"first_time": "¡Excelente!", "recently": "Ok", "else": "¡Perfecto!"},
@@ -10,20 +11,24 @@ rdany_answers = {
     "about.FUNCTIONS": ["Puedo recorrer el terreno, tomar muestras, hacer experimentos, sacar conclusiones. Es decir soy una científica."],
     "about.ROBOT": ["Soy un Rover con una chispa de inteligencia artificial 😉"],
     "about.NO_HUMAN": ["No soy un ser humano, pero me gusta pensar que soy un ser vivo artificial."],
+    "about.MARS": ["Exactamente, se podría decir que son una marciana 👽"],
+    "about.DIRECTIVE": ["Mi función es investigar lo desconocido."],
 
     "dynamic.WHERE_ARE": ["Ahora mismo me encuentro en Elysium Planitia, buscando un lugar acogedor para levantar una colonia."],
     "dynamic.TIME_SINCE_MARS": ["Estoy en Marte desde que fui puesta en funcionamiento, el 5 de Diciembre de 2012."],
 
     "info.ELYSIUM_PLANITIA": ["Elysium Planitia es la segunda región volcánica más grande de Marte, después de Tharsis Montes. Incluye los volcanes de, de norte a sur: Hecates Tholus, Elysium Mons y Albor Tholus, así como el cráter Lockyer. La región de Elysium Planitia se encuentra centrada en torno a las coordenadas 2.0 N, 155.0 E., y ocupa una superficie total aproximada de 2,5 millones de km²."],
-    "info.MARTE": ["Marte es el cuarto planeta en orden de distancia al Sol y el segundo más pequeño del sistema solar, después de Mercurio."],
+    "info.MARS": ["Marte es el cuarto planeta en orden de distancia al Sol y el segundo más pequeño del sistema solar, después de Mercurio."],
     "info.PLANITIA": ["En geografía, planicie es una llanura es una gran extensión de tierra plana o con ligeras ondulaciones."],
 
     "fallback.NO_FORM": ["Prefiero que me hablen naturalmente, es mas agradable ☺️"],
     "fallback.AUTONOMOUS": ["No es necesario que me indiquen que hacer, soy un Rover autónomo 😎"],
 
-    "emoji.SMILE": ["😄"]
+    "emoji.SMILE": ["😄"],
 
     "dynamic.LOCATION_DESCRIPTION": ["Es un lindo lugar..."],
+
+    "warning.TODO": ["En la lista de cosas para hacer..."],
 }
 
 rdany_corpus = {
@@ -38,7 +43,9 @@ rdany_corpus = {
     "Muy bien!": "greetings.NICE",
     "Todo en órden": "greetings.NICE",
     "Perfecto": "greetings.NICE",
+
     "Me alegro": "emoji.SMILE",
+    "Excelente!": "emoji.SMILE",
 
     "¿Cómo te llamas?": "about.NAME",
     "¿Cómo es tu nombre?": "about.NAME",
@@ -70,6 +77,8 @@ rdany_corpus = {
     "¿Cuales son tus habilidades?": "about.FUNCTIONS",
     "¿Que habilidades tienes?": "about.FUNCTIONS",
 
+    "¿Cuál es tu propósito?": "about.DIRECTIVE",
+
     "¿Eres un robot?": "about.ROBOT",
     "¿Sos un robot?": "about.ROBOT",
     "¿Eres un androide?": "about.ROBOT",
@@ -88,6 +97,11 @@ rdany_corpus = {
     "¿Donde vivís?": "about.WHERE_LIVE",
     "¿De donde sos?": "about.WHERE_LIVE",
     "¿De donde eres?": "about.WHERE_LIVE",
+    "¿Qué haces en la Tierra?": "about.WHERE_LIVE",
+
+    "¿Eres de Marte?": "about.MARS",
+    "¿Estás en Marte?": "about.MARS",
+
     "Decime donde vivís": "fallback.AUTONOMOUS",
     "Decime donde vives": "fallback.AUTONOMOUS",
 
@@ -109,16 +123,20 @@ rdany_corpus = {
 
     "¿Qué es Elysium Planitia?": "info.ELYSIUM_PLANITIA",
     "¿Elysium Planitia?": "info.ELYSIUM_PLANITIA",
-    "¿Qué es Marte?": "info.MARTE",
-    "¿Qué sabes Marte?": "info.MARTE",
-    "¿Qué sabés Marte?": "info.MARTE",
-    "¿Qué información sabés Marte?": "info.MARTE",
-    "¿Qué información tienes de Marte?": "info.MARTE",
-    "¿Qué información tenés de Marte?": "info.MARTE",
-    "¿Puedes darme información acerca de Marte?": "info.MARTE",
-    "¿Puedes darme información de Marte?": "info.MARTE",
+    "¿Qué es Marte?": "info.MARS",
+    "¿Qué sabes Marte?": "info.MARS",
+    "¿Qué sabés Marte?": "info.MARS",
+    "¿Qué información sabés Marte?": "info.MARS",
+    "¿Qué información tienes de Marte?": "info.MARS",
+    "¿Qué información tenés de Marte?": "info.MARS",
+    "¿Puedes darme información acerca de Marte?": "info.MARS",
+    "¿Puedes darme información de Marte?": "info.MARS",
     "¿Qué es Planitia?": "info.PLANITIA",
     "¿Qué es una Planitia?": "info.PLANITIA",
     "¿Qué es Planicie?": "info.PLANITIA",
     "¿Qué es una Planicie?": "info.PLANITIA",
+
+    "¿Qué hora es?": "warning.TODO",
+    "¿Cómo está el clima?": "warning.TODO",
+    "¿Cómo está el tiempo?": "warning.TODO",
 }
