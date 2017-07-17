@@ -53,8 +53,10 @@ while 1:
         input_text = result["message"]["text"] # Get input text
         print ()
         print (input_text)
-
-        answer = chatterbot.get_response(input_text)
+        if input_text == "/start":
+            answer = "greetings.START"
+        else:
+            answer = chatterbot.get_response(input_text)
         print (answer)
 
         if type(rdany_answers[answer]) == dict:
