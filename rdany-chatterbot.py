@@ -1,3 +1,4 @@
+import time
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 
@@ -6,6 +7,15 @@ from corpus import rdany_answers
 
 
 from telegram import telegram
+
+
+def get_mars_time():
+    millis = time.time()
+    JDut = (millis / (8.64 * 1.e4)) + 2440587.5
+    JDtt = JDut + (37 + 32.184) / 86400
+    J2000 = JDtt - 2451545
+    MSD = (((J2000 - 4.5) / 1.027491252) + 44796 - 0.00096)
+    return MSD
 
 try:
     # Attempts to load Telegram configuration
@@ -22,7 +32,18 @@ def send_to_telegram(chat_id, answer):
         }
     r = telegram_conection.send_to_bot('sendMessage', data = msg)
 
-chatterbot = ChatBot("Training Example")
+chatterbot = ChatBot(
+    "Training Example",
+    logic_adapters=[
+        {
+            'import_path': 'chatterbot.logic.BestMatch'
+        },
+        {
+            'import_path': 'chatterbot.logic.LowConfidenceAdapter',
+            'threshold': 0.65,
+            'default_response': 'fallback.LOW_CONFDENCE'
+        }
+    ],)
 chatterbot.set_trainer(ListTrainer)
 
 corpus_list = []
@@ -66,6 +87,8 @@ while 1:
                 answer_text = rdany_answers[answer]["recently"]
             elif "else" in rdany_answers[answer]:
                 answer_text = rdany_answers[answer]["else"]
+            elif "action" in rdany_answers[answer]:
+                answer_text = rdany_answers[answer]["text"].format(get_mars_time())
         elif type(rdany_answers[answer]) == list:
             answer_text = rdany_answers[answer][0]
 

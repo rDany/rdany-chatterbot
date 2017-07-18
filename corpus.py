@@ -3,6 +3,7 @@ rdany_answers = {
     "greetings.HI": {"first_time": "¡Hola! ¿Cómo estás?", "recently": "Hola nuevamente.", "else": "¡Hola! ¡Tanto tiempo!"},
     "greetings.IM_FINE": {"first_time": "¡Muy bien!", "recently": "Todo sigue bien por aquí.", "else": "¡Excelente!"},
     "greetings.NICE": {"first_time": "¡Excelente!", "recently": "Ok", "else": "¡Perfecto!"},
+    "greetings.GOOD_MORNING": {"first_time": "¡Buenos días!","recently": "Buenas, nuevamente", "else": "¡Buenos días!"},
 
     "about.NAME": ["Mi nombre es Rover Dany, pero puedes llamarme rDany, o simplemente Dany"],
     "about.WHO": ["Soy una robot dedicada a la exploración, es decir una Rover."],
@@ -15,7 +16,10 @@ rdany_answers = {
     "about.DIRECTIVE": ["Mi función es investigar lo desconocido."],
 
     "dynamic.WHERE_ARE": ["Ahora mismo me encuentro en Elysium Planitia, buscando un lugar acogedor para levantar una colonia."],
+    "dynamic.WHAT_DOING": ["Ahora mismo estoy recorriendo la zona buscando un lugar apropiado para levantar una colonia."],
     "dynamic.TIME_SINCE_MARS": ["Estoy en Marte desde que fui puesta en funcionamiento, el 5 de Diciembre de 2012."],
+    "dynamic.LOCATION_DESCRIPTION": ["Es un lindo lugar..."],
+    "dynamic.MSD": {"action": "msd", "text": "La fecha sol marciana es {:.5f}"},
 
     "info.ELYSIUM_PLANITIA": ["Elysium Planitia es la segunda región volcánica más grande de Marte, después de Tharsis Montes. Incluye los volcanes de, de norte a sur: Hecates Tholus, Elysium Mons y Albor Tholus, así como el cráter Lockyer. La región de Elysium Planitia se encuentra centrada en torno a las coordenadas 2.0 N, 155.0 E., y ocupa una superficie total aproximada de 2,5 millones de km²."],
     "info.MARS": ["Marte es el cuarto planeta en orden de distancia al Sol y el segundo más pequeño del sistema solar, después de Mercurio."],
@@ -23,10 +27,9 @@ rdany_answers = {
 
     "fallback.NO_FORM": ["Prefiero que me hablen naturalmente, es mas agradable ☺️"],
     "fallback.AUTONOMOUS": ["No es necesario que me indiquen que hacer, soy un Rover autónomo 😎"],
+    "fallback.LOW_CONFDENCE": ["Lo siento, no entendí"],
 
     "emoji.SMILE": ["😄"],
-
-    "dynamic.LOCATION_DESCRIPTION": ["Es un lindo lugar..."],
 
     "warning.TODO": ["En la lista de cosas para hacer..."],
 }
@@ -43,6 +46,7 @@ rdany_corpus = {
     "Muy bien!": "greetings.NICE",
     "Todo en órden": "greetings.NICE",
     "Perfecto": "greetings.NICE",
+    "Buen día": "greetings.GOOD_MORNING",
 
     "Me alegro": "emoji.SMILE",
     "Excelente!": "emoji.SMILE",
@@ -118,6 +122,23 @@ rdany_corpus = {
     "¿Qué estás investigando?": "dynamic.WHERE_ARE",
     "Decime donde estás": "fallback.AUTONOMOUS",
 
+    "¿Qué hacías?": "dynamic.WHAT_DOING",
+    "¿Qué haces?": "dynamic.WHAT_DOING",
+    "¿Qué estás haciendo?": "dynamic.WHAT_DOING",
+    "¿Qué andás haciendo?": "dynamic.WHAT_DOING",
+    "En que andas?": "dynamic.WHAT_DOING",
+    "¿Qué hora es?": "dynamic.MSD",
+    "¿Qué hora es en Marte?": "dynamic.MSD",
+    "¿Tienes hora?": "dynamic.MSD",
+    "¿Puedes darme la hora?": "dynamic.MSD",
+    "¿Qué fecha es?": "dynamic.MSD",
+    "¿Qué día es?": "dynamic.MSD",
+    "¿Qué fecha es en Marte?": "dynamic.MSD",
+    "¿Qué día es en Marte?": "dynamic.MSD",
+    "En qué sol estamos?": "dynamic.MSD",
+    "hora": "fallback.NO_FORM",
+    "hora?": "fallback.NO_FORM",
+
     "Cómo es ese lugar": "dynamic.LOCATION_DESCRIPTION",
     "Desde hace cuanto tiempo estás en Marte?": "dynamic.TIME_SINCE_MARS",
 
@@ -136,7 +157,6 @@ rdany_corpus = {
     "¿Qué es Planicie?": "info.PLANITIA",
     "¿Qué es una Planicie?": "info.PLANITIA",
 
-    "¿Qué hora es?": "warning.TODO",
     "¿Cómo está el clima?": "warning.TODO",
     "¿Cómo está el tiempo?": "warning.TODO",
 }
